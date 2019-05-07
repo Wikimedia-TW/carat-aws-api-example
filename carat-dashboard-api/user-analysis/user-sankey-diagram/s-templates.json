@@ -1,0 +1,12 @@
+{
+  "functionName": "${project}-${stage}-${name}",
+  "user-sankey-diagram-template": {
+    "application/json": {
+      "domain": "$input.params('domain')",
+      "group": "$input.params('group')",
+      "from": "$input.params('from')",
+      "to": "$input.params('to')",
+      "device": "$input.params('device')"
+    }
+  }
+}

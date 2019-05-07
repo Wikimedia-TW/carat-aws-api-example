@@ -1,0 +1,25 @@
+{
+  "name": "carat-api",
+  "version": "0.0.2",
+  "description": "A Serverless Project and its Serverless Plugin dependencies.",
+  "author": "me",
+  "license": "MIT",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/"
+  },
+  "dependencies": {
+    "async": "^2.0.1",
+    "moment-timezone": "^0.5.5",
+    "mysql": "^2.11.1",
+    "q": "^1.4.1"
+  },
+  "apidoc": {
+    "name": "Carat Dashboard API",
+    "description": "",
+    "version": "2.0.0",
+    "title": "Carat Dashboard API Documentation",
+    "url": "https://sgcgm4pwu5.execute-api.us-west-2.amazonaws.com/dev"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "carat-api",
+  "custom": {},
+  "plugins": [
+    "serverless-cors-plugin"
+  ]
+}

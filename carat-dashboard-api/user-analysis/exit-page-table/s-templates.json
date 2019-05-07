@@ -1,0 +1,15 @@
+{
+  "functionName": "${project}-${stage}-${name}",
+  "exit-page-table-template": {
+    "application/json": {
+      "domain": "$input.params('domain')",
+      "group": "$input.params('group')",
+      "from": "$input.params('from')",
+      "to": "$input.params('to')",
+      "draw": "$input.params('draw')",
+      "start": "$input.params('start')",
+      "length": "$input.params('length')",
+      "device": "$input.params('device')"
+    }
+  }
+}

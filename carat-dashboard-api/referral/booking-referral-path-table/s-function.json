@@ -1,0 +1,87 @@
+{
+  "name": "booking-referral-path-table",
+  "runtime": "nodejs4.3",
+  "description": "Serverless Lambda function for project: carat-api",
+  "customName": "$${functionName}",
+  "customRole": false,
+  "handler": "referral/booking-referral-path-table/handler.handler",
+  "timeout": 30,
+  "memorySize": 128,
+  "authorizer": {},
+  "custom": {
+    "excludePatterns": [
+      "moment-timezone"
+    ],
+    "cors": {
+      "allowOrigin": "*",
+      "allowHeaders": [
+        "Content-Type",
+        "X-Amz-Date",
+        "Authorization",
+        "X-Api-Key",
+        "Cache-Control"
+      ]
+    }
+  },
+  "endpoints": [
+    {
+      "path": "booking-referral-path-table",
+      "method": "GET",
+      "type": "AWS",
+      "authorizationType": "none",
+      "authorizerFunction": false,
+      "apiKeyRequired": true,
+      "requestParameters": {
+        "integration.request.querystring.domain": "method.request.querystring.domain",
+        "integration.request.querystring.group": "method.request.querystring.group",
+        "integration.request.querystring.from": "method.request.querystring.from",
+        "integration.request.querystring.to": "method.request.querystring.to",
+        "integration.request.querystring.draw": "method.request.querystring.draw",
+        "integration.request.querystring.start": "method.request.querystring.start",
+        "integration.request.querystring.length": "method.request.querystring.length",
+        "integration.request.querystring.device": "method.request.querystring.device"
+      },
+      "requestTemplates": "$${booking-referral-path-table-template}",
+      "responses": {
+        "400": {
+          "statusCode": "400"
+        },
+        "default": {
+          "statusCode": "200",
+          "responseParameters": {},
+          "responseModels": {
+            "application/json;charset=UTF-8": "Empty"
+          },
+          "responseTemplates": {
+            "application/json;charset=UTF-8": ""
+          }
+        }
+      },
+      "cacheKeyParameters": [
+        "method.request.querystring.domain",
+        "method.request.querystring.group",
+        "method.request.querystring.from",
+        "method.request.querystring.to",
+        "method.request.querystring.draw",
+        "method.request.querystring.start",
+        "method.request.querystring.length",
+        "method.request.querystring.device"
+      ],
+      "cacheNamespace": "${name}-cache"
+    }
+  ],
+  "events": [],
+  "environment": {
+    "SERVERLESS_PROJECT": "${project}",
+    "SERVERLESS_STAGE": "${stage}",
+    "SERVERLESS_REGION": "${region}",
+    "RDS_HOST": "${PROD-CARAT-HOST}",
+    "RDS_USER": "${PROD-CARAT-USER}",
+    "RDS_PASSWORD": "${PROD-CARAT-PASSWORD}",
+    "RDS_SUFFIX": "_prod"
+  },
+  "vpc": {
+    "securityGroupIds": [],
+    "subnetIds": []
+  }
+}
